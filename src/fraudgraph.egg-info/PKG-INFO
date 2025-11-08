@@ -1,3 +1,22 @@
+Metadata-Version: 2.4
+Name: fraudgraph
+Version: 0.1.0
+Summary: Transaction & Graph-based Fraud Detection Toolkit
+Author: FraudGraph maintainers
+Project-URL: Homepage, https://github.com/your-org/fraudgraph-toolkit
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: networkx>=3.2
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=1.25
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: tqdm>=4.66
+Requires-Dist: matplotlib>=3.8
+Requires-Dist: python-dateutil>=2.8
+Requires-Dist: neo4j>=5.18
+Dynamic: license-file
+
 # FraudGraph: Transaction & Graph-based Fraud Detection Toolkit
 
 **FraudGraph** is an open-source toolkit to build transaction networks from event logs and run scalable graph algorithms —
@@ -23,19 +42,13 @@ Finding the **ring** (not just the bad individual) helps platforms, investigator
 
 ```bash
 # 1) Install (recommended: Python 3.10+)
-python3 -m venv .venv && source .venv/bin/activate
-pip3 install -r requirements.txt  # or: pip3 install -e .
-
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .
 # 2) Run the simulated example
-python3 examples/simulate_ring.py --out data/sim_transactions.csv
-python3 examples/run_pipeline.py --transactions data/sim_transactions.csv --out reports
-
-# 3) Explore results
-# Open the generated report:
-open reports/report.md
-# (Optional) launch the notebook for visualization:
+python examples/simulate_ring.py --out data/sim_transactions.csv
+python examples/run_pipeline.py --transactions data/sim_transactions.csv --out reports
+# 3) Open the demo notebook
 # jupyter lab notebooks/demo_ring.ipynb
-
 ```
 
 ## Data
